@@ -33,3 +33,7 @@ __pycache__
 */__pycache__/
  account/migrations/*
  idea/
+
+#--------------------------------
+
+.idea
