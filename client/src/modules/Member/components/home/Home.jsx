@@ -43,9 +43,9 @@ const statusMarksPlans = {
     2: 'check'
 }
 const statusColorPlans = {
-    0: 'red',
-    1: 'yellow',
-    2: 'green'
+    0: 'red-500',
+    1: 'yellow-400',
+    2: 'green-400'
 }
 
 const plans = [
@@ -125,7 +125,7 @@ const Home = props => {
                 {plans.map(i => {
                     return <tr>
                         <th className={'border-2 border-third_color py-2'}>{i.name}</th>
-                        <th className={`text-${statusColorPlans[i.status]}-400 border-2 border-third_color py-2`}>
+                        <th className={`text-${statusColorPlans[i.status]} border-2 border-third_color py-2`}>
                             {statusCodePlans[i.status]}<i className={`fa-regular fa-${statusMarksPlans[i.status]} mr-1`}/>
                         </th>
                         <th className={'border-2 border-third_color py-2'}>
