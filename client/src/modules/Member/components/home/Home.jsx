@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import week from '../../../../core/utils/week';
 import {Chart, initTE,} from "tw-elements";
 import {Link} from "react-router-dom";
+import BaseApi from '../../../../core/api/BaseApi';
 
 initTE({Chart});
 
@@ -69,6 +70,28 @@ const Home = props => {
         new Chart(document.getElementById('line-chart'), dataLine);
     },)
 
+
+
+    const connectApi = async e => {
+
+        const email = "nikkhoofard2000@outlook.com"
+        const name = "mohammad"
+        const pass = "mohammad123456789"
+        const data = {
+            email: email,
+            name: name,
+            password: pass,
+            re_password: pass
+        }
+        const url = "http://127.0.0.1:8000/api/auth/users/"
+
+
+        const a =  await BaseApi(url, "POST", data)
+        console.log(a)
+    }
+
+
+
     return <div>
         <div className={'mb-2 mt-4 mr-2'}>
             <span className={'text-xl text-bold mx-2'}>{'سینا صادقی '}</span>
@@ -96,6 +119,7 @@ const Home = props => {
                 </div>
                 <div className={'text-green-400'}>
                     {'وزن فعلی:'}
+    <div onClick={e => connectApi(e)}>اتصال به api</div>
                     <input type="text" value={56}
                            className={`text-center border-b-2 focus-visible:outline-0 w-6 mx-1 border-b-third_color`}/>
                     {'kg '}
