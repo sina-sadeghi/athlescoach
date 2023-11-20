@@ -3,6 +3,7 @@ import Form from '../../../../shared/form/Form';
 import Filed from '../../../../shared/filed/Filed';
 import {Link} from "react-router-dom";
 import Button from "../../../../shared/button/Button";
+// import {RegisterationApi} from '../../../../core/api/Auth/UsersApi'
 
 const arregex =/^[a-zA-Z0-9!@#$%^&*+/_ ]*$/
 
@@ -43,10 +44,12 @@ const SignUp = props => {
         else if(pass !== pass2)
             alert('تکرار رمز عبور اشتباه است')
         else {
-            console.log({
-                phone: phone,
-                password: pass
-            })
+            const email = "nikkhoofard2000@outlook.com"
+            const name = "mohammad"
+            const pass = "mohammad123456789"
+
+            // const result = RegisterationApi(email, name, pass)
+            // console.log(result)
             alert('ارسال فرم به سرور')
         }
     }

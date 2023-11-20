@@ -3,6 +3,7 @@ import Form from '../../../../shared/form/Form';
 import Filed from '../../../../shared/filed/Filed';
 import {Link} from "react-router-dom";
 import Button from "../../../../shared/button/Button";
+// import {LoginApi} from "../../../../core/api/Auth/JwtApi";
 
 const arregex =/^[a-zA-Z0-9!@#$%^&*+/_ ]*$/
 
@@ -31,10 +32,11 @@ const Login = props => {
         else if (pass.length < 8)
             alert('رمز عبور حداقل باید x8 کاراکتر باشد')
         else {
-            console.log({
-                email: email,
-                password: pass
-            })
+            const email = "nikkhoofard2000@outlook.com"
+            const pass = "mohammad123456789"
+
+            const result = LoginApi(email, pass)
+            console.log(result)
             alert('ارسال فرم به سرور')
         }
     }

@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Header from '../../modules/Member/components/header/Header';
 import Footer from "../../modules/Member/components/footer/Footer";
 import {connect} from "react-redux";
 import {SportPlanPopup} from "../../actions/popup-action";
 import {SportPlanAlert} from "../../actions/alert-action";
 // import {withRouter} from "react-router-dom";
+import Storage from '../../core/services/Storage'
+import {UserDataApi} from '../../core/api/Auth/UsersApi'
+import {getUserStorage} from '../../core/services/Storage'
 
 const MemberLayout = (props) => {
+
+    useEffect(()=>{
+        // if(Storage.getToken2())
+        // Storage().setToken2("sd")
+        console.log(getUserStorage())
+        //     UserDataApi()
+    },[])
 
     const actionClickBody = () => {
         props.OnSportPlanPopup(false);
